@@ -1,0 +1,47 @@
+﻿@model Home
+
+
+<div class="mt-2" style="width:50%">
+    <form asp-action="AddPerson" method="post">
+        <h2>Add Person</h2>
+        <div class="mb-2">
+            <label asp-for="FirstName" class="form-label">Your full name</label>
+            <input asp-for="FirstName" type="text" class="form-control" />
+            <input asp-for="FirstName" type="text" class="form-control" />
+            <span class="text-danger" asp-validation-for="FirstName"></span>
+        </div>
+        <div class="mb-2">
+            <label asp-for="LastName" class="form-label">Your full name</label>
+            <input asp-for="LastName" type="text" class="form-control" />
+            <input asp-for="LastName" type="text" class="form-control" />
+            <span class="text-danger" asp-validation-for="LastName"></span>
+        </div>
+        <div class="mb-2">
+            <label asp-for="Email" class="form-label">Your work email address</label>
+            <input asp-for="Email" type="text" class="form-control" />
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </div>
+        <div class="mb-2">
+            <select class="dropdown">                
+            </select>
+        </div>
+        <div class="mb-2">
+            <label asp-for="Organization" class="form-label">The name of your Organization</label>
+            <input asp-for="Organization" type="text" class="form-control" />
+            <span class="text-danger" asp-validation-for="Organization"></span>
+        </div>
+
+
+        @if (TempData["msg"] != null)
+        {
+            <div class="mb-3">
+                @TempData["msg"]
+            </div>
+        }
+        <button type="Submit" class="btn btn-primary">Submit</button>
+        <a href="/Home/" class="btn btn-primary">All Persons</a>
+    </form>
+</div>
+
+<script src="~/js/AddDetailsJS.js"></script>
+
